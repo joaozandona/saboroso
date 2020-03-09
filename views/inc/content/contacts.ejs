@@ -3,23 +3,11 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="col-md-6 animate-box">
-                    <% if (typeof error === "string"){%>
-                        <div class="alert alert-danger">
-    
-                            <%= error %>
-    
-                        </div>
-                    <% } %>
-    
-                    <% if (typeof success === "string"){%>
-                        <div class="alert alert-success">
-    
-                            <%= success %>
-    
-                        </div>
-                    <% } %>
+
+                    <%- include('alerts') -%>
+
                 <h3>Entre em Contato</h3>
-                <form action="#">
+                <form action="/contacts" method="POST">
                     <div class="row form-group">
                         <div class="col-md-12">
                             <label class="sr-only" for="name">Nome</label>
@@ -37,7 +25,7 @@
                     <div class="row form-group">
                         <div class="col-md-12">
                             <label class="sr-only" for="message">Mensagem</label>
-                            <textarea name="message" id="message" cols="30" rows="10" value="<%= body.message %>" class="form-control" placeholder="Escreve alguma coisa"></textarea>
+                            <textarea name="message" id="message" cols="30" rows="10"  class="form-control" placeholder="Escreve alguma coisa"><%= body.message %></textarea>
                         </div>
                     </div>
                     <div class="form-group">

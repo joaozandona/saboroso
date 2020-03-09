@@ -26,7 +26,7 @@ router.get('/contacts', function(req, res, next){
 
 });
 
-router.get('/contacts', function(req, res, next){
+router.post('/contacts', function(req, res, next){
 
   if(!req.body.name){
 
